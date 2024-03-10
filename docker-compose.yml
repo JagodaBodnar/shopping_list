@@ -1,0 +1,15 @@
+version: '1.0'
+
+services:
+  postgres:
+    image: 'postgres:15'
+    container_name: 'shopping_list_db'
+    environment:
+      - POSTGRES_USER=ppjb
+      - POSTGRES_PASSWORD=jbpp
+      - POSTGRES_DB=shopping_list
+    volumes:
+      - ./data/pgdata:/var/lib/postgressql/data
+    ports:
+      - 5432:5432
+    restart: always
